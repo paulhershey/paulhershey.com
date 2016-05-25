@@ -177,6 +177,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/the-elements-of-web-design.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 125780,
+		"inputAbbreviatedPath": "\/img\/the-elements-of-web-design.png",
+		"outputAbbreviatedPath": "\/img\/the-elements-of-web-design.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,

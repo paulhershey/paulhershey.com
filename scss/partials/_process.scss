@@ -67,6 +67,19 @@
           }
         }
       }
+      .badge {
+        float: left;
+        margin-right: 40px;
+        display: none;
+        @include MQ(M) {
+          width: 124px;
+          height: 124px;
+          border-radius: 50%;
+          margin-right: 40px;
+          text-align: center;
+          padding-top: 14px;
+        }
+      }
       .process-content {
         @include span-columns(12);
         @include MQ(M) {
