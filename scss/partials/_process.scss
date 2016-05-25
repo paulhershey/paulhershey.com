@@ -1,0 +1,138 @@
+.process {
+  @include outer-container;
+  padding: 50px 0;
+  text-align: center;
+  @include MQ(M) {
+    padding: 120px 0;
+  }
+  h2 {
+    margin-bottom: 4rem;
+    @include MQ(M) {
+      font-size: 3rem;
+      margin-bottom: 5rem;
+    }
+  }
+  .gallery {
+    height: 540px;
+    .gallery-cell {
+      width: 66%;
+      margin-right: 40px;
+      // background: linear-gradient(120deg, #FFFFFF 71%, rgba(238,238,238,1.0) 100%);
+      background: $snow;
+      box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
+      padding: 30px;
+      text-align: left;
+      @include MQ(M) {
+        padding: 60px 90px;
+        margin-right: 140px;
+        width: 66%;
+      }
+      .steps {
+        height: 50px;
+        @include span-columns(12);
+        @include MQ(M) {
+          @include span-columns(4);
+          height: auto;
+        }
+        .number {
+          float: left;
+          margin-right: 40px;
+          @include MQ(M) {
+            width: 124px;
+            height: 124px;
+            border-radius: 50%;
+            background-color: $charcoal;
+            margin-right: 40px;
+            text-align: center;
+            padding-top: 14px;
+          }
+          h4 {
+            color: $robot;
+            font-size: 2.5rem;
+            @include MQ(M) {
+              color: $snow;
+              font-size: 6.6rem;
+            }
+            sup {
+              font-size: 1.2rem;
+              position: relative;
+              vertical-align: baseline;
+              top: -0.0em;
+              @include MQ(M) {
+                font-size: 2.0rem;
+                top: -0.5em;
+                font-weight: 100;
+              }
+            }
+          }
+        }
+      }
+      .process-content {
+        @include span-columns(12);
+        @include MQ(M) {
+          @include span-columns(8);
+        }
+        h3 {
+          margin-bottom: 2rem;
+          @include MQ(M) {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+          }
+        }
+        .line {
+          @include line;
+          width:45px;
+          margin-bottom: 2rem;
+          @include MQ(M) {
+            margin-bottom: 3rem;
+          }
+        }
+        .quote-content {
+          display: none;
+          @include MQ(M) {
+            display: block;
+          }
+          .quote {margin-bottom: 10px;}
+          .quote-name {
+            color: $charcoal;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* big buttons, no circle */
+.flickity-prev-next-button {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+}
+.flickity-prev-next-button:hover {
+  background: transparent;
+}
+/* arrow color */
+.flickity-prev-next-button .arrow {
+  fill: $blue-pants;
+}
+.flickity-prev-next-button.no-svg {
+  color: $blue-pants;
+}
+/* hide disabled button */
+.flickity-prev-next-button:disabled {
+  display: none;
+}
+
+/* position dots up a bit */
+.flickity-page-dots {
+  bottom: -22px;
+}
+/* dots are lines */
+.flickity-page-dots .dot {
+  height: 4px;
+  width: 40px;
+  margin: 0;
+  border-radius: 0;
+  background-color: $blue-pants;
+}

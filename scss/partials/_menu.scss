@@ -1,0 +1,307 @@
+/* --------------------------------
+
+Main Components
+
+-------------------------------- */
+
+main {
+	position: relative;
+	z-index: 2;
+
+	/* fix bug on iOS */
+	height: 100vh;
+	overflow-y: auto;
+
+	-webkit-overflow-scrolling: touch;
+
+	/* Force Hardware Acceleration in WebKit */
+	@include transform(translateZ(0));
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	@include transition(transform $animation-duration);
+	@include transition-timing-function(cubic-bezier(.91,.01,.6,.99));
+
+	.navigation-is-open & {
+		@include transform(translateX(100%));
+	}
+}
+
+.nav-trigger {
+	position: fixed;
+	z-index: 3;
+	left: 5%;
+	top: 20px;
+	height: 54px;
+	width: 54px;
+	background-color: $doughnut;
+	border-radius: 50%;
+
+	/* image replacement */
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+
+	@include transition(transform $animation-duration - 0.2s);
+
+	.nav-icon {
+		/* icon created in CSS */
+		position: absolute;
+		@include center; // mixin inside partials > _mixins.scss
+		width: 22px;
+		height: 2px;
+		background-color: $snow;
+
+		&::before, &:after {
+			/* upper and lower lines of the menu icon */
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			background-color: inherit;
+
+			/* Force Hardware Acceleration in WebKit */
+			@include transform(translateZ(0));
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+
+			@include transition(transform $animation-duration - 0.2s, width $animation-duration - 0.2s, top .3s);
+		}
+
+		&::before {
+			@include transform-origin(right top);
+			@include transform(translateY(-6px));
+		}
+
+		&::after {
+			@include transform-origin(right bottom);
+			@include transform(translateY(6px));
+		}
+
+	}
+
+	.no-touch &:hover .nav-icon::after {
+		top: 2px;
+	}
+
+	.no-touch &:hover .nav-icon::before {
+		top: -2px;
+	}
+
+	svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	circle {
+		/* circle border animation */
+		@include transition(stroke-dashoffset $animation-duration - 0.3s 0s);
+	}
+
+	.navigation-is-open & {
+		/* rotate trigger when navigation becomes visible */
+		@include transform(rotate(180deg));
+
+		.nav-icon::after,
+		.nav-icon::before {
+			/* animate arrow --> from hamburger to arrow */
+			width: 50%;
+			@include transition(transform $animation-duration - 0.2s, width $animation-duration - 0.2s);
+		}
+
+		.nav-icon::before {
+			@include transform(rotate(45deg));
+		}
+
+		.nav-icon::after {
+			@include transform(rotate(-45deg));
+		}
+
+		.no-touch &:hover .nav-icon::after,
+		.no-touch &:hover .nav-icon::before {
+			top: 0;
+		}
+
+		circle {
+			stroke-dashoffset: 0;
+			@include transition(stroke-dashoffset $animation-duration - 0.3s 0.3s);
+		}
+	}
+
+	@include MQ(L) {
+		top: 40px;
+	}
+}
+
+.nav {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: $doughnut;
+	visibility: hidden;
+	@include transition(visibility 0s $animation-duration);
+
+	.navigation-wrapper {
+		/* all navigation content */
+		height: 100%;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+		padding: 40px 5% 40px calc(5% + 80px);
+
+		/* Force Hardware Acceleration in WebKit */
+		@include transform(translateZ(0));
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+
+		@include transform(translateX(-50%));
+		@include transition(transform $animation-duration);
+		@include transition-timing-function(cubic-bezier(.86,.01,.77,.78));
+	}
+
+	.navigation-is-open & {
+		visibility: visible;
+		@include transition(visibility 0s 0s);
+
+		.navigation-wrapper {
+			@include transform(translateX(0));
+			@include transition(transform $animation-duration - 0.2s);
+			@include transition-timing-function(cubic-bezier(.82,.01,.77,.78));
+		}
+	}
+
+	h2 {
+		position: relative;
+		margin-bottom: 1.7em;
+		font-size: 1.3rem;
+		font-weight: 800;
+		color: $snow;
+		text-transform: uppercase;
+
+		&::after {
+			/* bottom separation line */
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: -20px;
+			height: 1px;
+			width: 60px;
+			background-color: currentColor;
+		}
+	}
+
+	.primary-nav {
+		margin-top: 60px;
+
+		li {
+			margin: 1.6em 0;
+		}
+
+		a {
+			font-family: $secondary-font;
+			font-size: 2.4rem;
+			color: rgba($snow, .5);
+			display: inline-block;
+
+			&.selected {
+				color: $snow;
+			}
+
+			.no-touch &:hover {
+				color: $snow;
+			}
+		}
+	}
+
+	.contact-info {
+		margin-top: 80px;
+
+		li {
+			font-family: $secondary-font;
+			margin-bottom: 1.5em;
+			line-height: 1.2;
+			color: $snow;
+		}
+
+		a {
+			color: $snow;
+		}
+
+		span {
+			display: block;
+		}
+
+		li, a, span {
+			font-size: 1.6rem;
+		}
+
+	}
+
+	@include MQ(L) {
+
+		.navigation-wrapper {
+			padding: 62px 20%;
+			@include clearfix;
+		}
+
+		.half-block {
+			@include span-columns(6);
+		}
+
+		.primary-nav {
+			margin-top: 0;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-bottom: 5.6em;
+		}
+
+		.primary-nav {
+
+			li {
+				margin: 2em 0;
+			}
+
+			a {
+				font-size: 4.4rem;
+			}
+
+		}
+
+		.contact-info {
+			margin-top: 120px;
+			text-align: right;
+
+			li {
+				margin-bottom: 2.4em;
+			}
+
+			li, a, span {
+				font-size: 2rem;
+			}
+		}
+	}
+}
+
+.no-js main {
+	height: auto;
+	overflow: visible;
+}
+
+.no-js .nav {
+	position: static;
+	visibility: visible;
+
+	.navigation-wrapper {
+		height: auto;
+		overflow: visible;
+		padding: 100px 5%;
+		@include transform(translateX(0));
+	}
+}

@@ -1,0 +1,36 @@
+.gro {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: $study-width-S;
+	height: 100%;
+	overflow-y: auto;
+    text-align: center;
+
+	/* smooth scrolling on mobile phones and tablets */
+	-webkit-overflow-scrolling: touch;
+
+	background: $snow;
+	z-index: $study-zindex;
+
+	/* this how we move the author bio section off the canvas */
+	@include transform(translateX($study-width-S));
+
+	@include transition-property (transform);
+	@include transition-duration(.3s);
+
+    &.slide-in {
+		/* the author bio section slides in when the user clicks on the vipwink member picture */
+		@include transform(translateX(0));
+	}
+
+	@include MQ(M) {
+		width: $study-width-M;
+		@include transform(translateX($study-width-M));
+	}
+
+	@include MQ(L) {
+		width: $study-width-L;
+		@include transform(translateX($study-width-L));
+	}
+}

@@ -1,0 +1,139 @@
+body {
+	/* prevent ie from showing the horizontal scrollbar */
+	overflow-x: hidden;
+
+	&.overflow-hidden {
+		/* when author bio is visible, the out-of-focus content won't scroll */
+		overflow: hidden;
+	}
+}
+
+main {
+	position: relative;
+	z-index: $main-zindex;
+	@include transition-property(transform);
+	@include transition-duration(.3s);
+
+	&.slide-out {
+		/* the main element slides to the left when the author bio is visible */
+		@include transform(translateX(-$study-width-S));
+
+		.overlay {
+			/* the overlay layer gets visible when the author bio slides in */
+			display: block;
+			@include animation(fade-in .3s);
+		}
+	}
+
+	@include MQ(M) {
+		&.slide-out {
+			/* change in size of the author bio section */
+			@include transform(translateX(-$study-width-M));
+		}
+	}
+
+	@include MQ(L) {
+		&.slide-out {
+			@include transform(translateX(-$study-width-L));
+		}
+	}
+}
+
+.work {
+    background-color: $lightBlue;
+    padding: 20px;
+    
+    #case-study {
+        background: $lightBlue;
+
+        .img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba($darkBlue, .9);
+            opacity: 0;
+            border-radius: .25em .25em 0 0;
+            @include transition(opacity .3s);
+
+                span {
+                    position: absolute;
+                    @include center; // see partials > _mixins.scss
+                    color: #FFF;
+                }
+        }
+
+        @include MQ(M) {
+            li {
+                @include column(.31);
+                margin-right: 3.5%;
+
+                &:nth-child(3n) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+.case-study-close {
+	width: 32px;
+	height: 32px;
+	overflow: hidden;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	background: url('../img/icon-close.svg') no-repeat center center;
+	text-indent: 100%;
+	white-space: nowrap;
+	z-index: $close-study;
+	display: none;
+
+	&.is-visible {
+		display: block;
+		@include animation(move-in .8s);
+	}
+
+	@include MQ(L) {
+		right: 20px;
+		top: 20px;
+	}
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba($darkBlue, .8);
+	cursor: pointer;
+	display: none;
+}
+
+/* -------------------------------- 
+
+xkeyframes 
+
+-------------------------------- */
+
+@include keyframes(fade-in) {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@include keyframes(move-in) {
+	0% {
+		@include transform(translateX(100px));
+	}
+
+	100% {
+		@include transform(translateX(0));
+	}
+}

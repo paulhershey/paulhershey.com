@@ -1,0 +1,73 @@
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  // font-family: $primary-font;
+  // font-size: modular-scale(1);
+  line-height: $heading-line-height;
+  margin: 0 0 $small-spacing;
+}
+
+h1 {
+  font-family: $tertiary-font;
+  font-size: 3.6rem;
+}
+
+h2, h3 {
+  font-family: $secondary-font;
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4 {
+  font-family: $tertiary-font;
+  font-size: 6.6rem;
+}
+
+h5 {
+  font-family: $secondary-font;
+  font-style: italic;
+  letter-spacing: 0.1rem;
+  font-size: 2.2rem;
+}
+
+p {
+  font-family: $primary-font;
+  color: $robot;
+  margin: 0 0 $small-spacing;
+}
+
+a {
+  color: $action-color;
+  text-decoration: none;
+  transition: color $base-duration $base-timing;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: shade($action-color, 25%);
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}

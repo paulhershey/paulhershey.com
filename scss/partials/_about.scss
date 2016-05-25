@@ -1,0 +1,44 @@
+header {
+  @include outer-container;
+  padding: 50px 0;
+  @include MQ(M) {
+    padding: 100px 0;
+  }
+  .card {
+    @include span-columns(10);
+    @include shift(1);
+    background: $snow;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
+    padding: 30px;
+    text-align: left;
+    @include MQ(M) {
+      @include span-columns(8);
+      @include shift(2);
+      padding: 60px 90px;
+    }
+    svg {
+      margin-bottom: 10px;
+      @include MQ(M) {
+        margin-bottom: 30px;
+      }
+    }
+    h1 {
+      margin-bottom: 2rem;
+      @include MQ(M) {
+        font-size: 6.6rem;
+        margin-bottom: 3rem;
+      }
+    }
+    .line {
+      @include line;
+      width: 100px;
+      margin-bottom: 2rem;
+      @include MQ(M) {
+        margin-bottom: 3rem;
+      }
+    }
+    p {
+      max-width: 450px;
+    }
+  }
+}

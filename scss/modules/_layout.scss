@@ -1,0 +1,60 @@
+// breakpoints
+
+$S:     480px;
+$M:     768px;
+$L:     1170px;
+
+// media queries
+
+@mixin MQ($canvas) {
+  @if $canvas == S {
+   @media only screen and (min-width: $S) { @content; }
+  }
+  @else if $canvas == M {
+   @media only screen and (min-width: $M) { @content; }
+  }
+  @else if $canvas == L {
+   @media only screen and (min-width: $L) { @content; }
+  }
+}
+
+
+// z-index for case studies
+
+$close-study:  3;
+$main-zindex:  2;
+$study-zindex: 1;
+
+// Width of the hidden author bio section
+
+$study-width-S: 100%;   // > 320px - see partials > _layout.scss
+$study-width-M: 800px;  // > 768px
+//$study-width-L: 1000px; // > 1200px
+//Temp width
+$study-width-L: 724px; // > 1200px
+
+
+
+
+
+/* --------------------------------
+
+Primary style
+
+-------------------------------- */
+
+html {
+	font-size: 62.5%;
+}
+
+body, html {
+	/* prevent horizontal scrolling */
+	overflow-x: hidden;
+}
+
+// Background Color
+main { background-color: $bkgd; }
+
+a {
+	text-decoration: none;
+}

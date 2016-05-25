@@ -1,0 +1,76 @@
+.blog {
+  @include outer-container;
+  padding: 50px 0;
+  text-align: center;
+  @include MQ(M) {
+    padding: 120px 0;
+  }
+  h2 {
+    margin-bottom: 4rem;
+    @include MQ(M) {
+      font-size: 3rem;
+      margin-bottom: 5rem;
+    }
+  }
+  .card {
+    @include span-columns(10);
+    @include shift(1);
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
+    padding: 30px;
+    text-align: left;
+    position: relative;
+    margin-bottom: 8rem;
+    @include MQ(M) {
+      @include span-columns(8);
+      @include shift(2);
+      margin-bottom: 10rem;
+      padding: 0;
+    }
+    .photo {
+      @include span-columns(8 of 8);
+      @include MQ(M) {
+        @include span-columns(3 of 8);
+        background-image: url('../img/blog-img.jpeg');
+        background-size: 1200px 509px;
+        background-repeat: no-repeat;
+        display: block;
+        width: 350px;
+        height: 500px;
+      }
+    }
+    .blog-content {
+      @include span-columns(8 of 8);
+      @include MQ(M) {
+        @include span-columns(4 of 8);
+        text-align: left;
+        padding: 65px 20px;
+      }
+      .line {
+        @include line;
+        width:45px;
+        margin-bottom: 2rem;
+        @include MQ(M) {
+          margin-bottom: 3rem;
+        }
+      }
+      button {
+        position: absolute;
+        top: 440px;
+        right: 80px;
+        width: 150px;
+        height: 60px;
+        background: $doughnut;
+        color: $snow;
+        font-family: $primary-font;
+        font-size: 1.7rem;
+        box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
+        @include MQ(M) {
+          top: 470px;
+          right: 40px;
+          width: 150px;
+        }
+      }
+    }
+  }
+}
