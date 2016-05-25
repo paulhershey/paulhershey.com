@@ -74,6 +74,7 @@
         @include MQ(M) {
           width: 124px;
           height: 124px;
+          display: block;
           border-radius: 50%;
           margin-right: 40px;
           text-align: center;
