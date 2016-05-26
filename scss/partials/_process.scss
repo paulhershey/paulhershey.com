@@ -1,5 +1,5 @@
 .process {
-  @include outer-container;
+  // @include outer-container;
   padding: 50px 0;
   text-align: center;
   @include MQ(M) {
@@ -22,9 +22,9 @@
       padding: 30px;
       text-align: left;
       @include MQ(M) {
-        padding: 60px 90px;
-        margin-right: 140px;
-        width: 66%;
+        padding: 80px 90px;
+        margin-left: 100px;
+        width: 55%;
         &:hover {
           box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.30);
         }
@@ -143,6 +143,9 @@
 /* position dots up a bit */
 .flickity-page-dots {
   bottom: -22px;
+  @include MQ(M) {
+    bottom: -62px;
+  }
 }
 /* dots are lines */
 .flickity-page-dots .dot {
