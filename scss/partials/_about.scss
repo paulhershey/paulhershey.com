@@ -1,8 +1,11 @@
 header {
   @include outer-container;
+  background: url("../../img/header-bkgd@2x.png") repeat-x;
+  background-size: 1440px 449px;
   padding: 50px 0;
   @include MQ(M) {
     padding: 100px 0;
+    z-index: 1;
   }
   .card {
     @include span-columns(10);
@@ -13,7 +16,8 @@ header {
     text-align: left;
     @include MQ(M) {
       @include span-columns(8);
-      @include shift(2);
+      @include shift(4);
+      position: relative;
       padding: 60px 90px;
     }
     svg {
@@ -38,7 +42,24 @@ header {
       }
     }
     p {
-      max-width: 450px;
+      max-width: 500px;
+    }
+  }
+  .paul-hershey {
+    display: none;
+    @include MQ(M) {
+      @include span-columns(2);
+      @include shift(1);
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
+      position: absolute;
+      top: 200px;
+      left: -100px;
+      display: block;
+      z-index: 2;
+      width: 540px;
+      height: 540px;
+      background: url("../../img/paul-hershey@2x.png");
+      background-size: 540px 540px;
     }
   }
 }

@@ -58,6 +58,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/css\/parallax.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/parallax.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/css\/reset.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -151,6 +160,39 @@
 		"initialSize": 1.10724e+06,
 		"inputAbbreviatedPath": "\/img\/GRO.jpg",
 		"outputAbbreviatedPath": "\/img\/GRO.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/header-bkgd@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 178105,
+		"inputAbbreviatedPath": "\/img\/header-bkgd@2x.png",
+		"outputAbbreviatedPath": "\/img\/header-bkgd@2x.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/paul-hershey.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 425959,
+		"inputAbbreviatedPath": "\/img\/paul-hershey.png",
+		"outputAbbreviatedPath": "\/img\/paul-hershey.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/paul-hershey@2x.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.17522e+06,
+		"inputAbbreviatedPath": "\/img\/paul-hershey@2x.png",
+		"outputAbbreviatedPath": "\/img\/paul-hershey@2x.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -303,6 +345,22 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/scss\/modules\/_mixins.scss",
 		"outputAbbreviatedPath": "\/css\/_mixins.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/scss\/modules\/parallax.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/scss\/modules\/parallax.scss",
+		"outputAbbreviatedPath": "\/css\/parallax.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,

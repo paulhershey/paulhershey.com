@@ -230,6 +230,52 @@ main {
 a {
   text-decoration: none; }
 
+/* Parallax base styles
+  --------------------------------------------- */
+.parallax {
+  height: 500px;
+  /* fallback for older browsers */
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  perspective: 300px; }
+
+.parallax__group {
+  position: relative;
+  height: 500px;
+  /* fallback for older browsers */
+  height: 100vh;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.parallax__layer--fore {
+  -webkit-transform: translateZ(90px) scale(0.7);
+  transform: translateZ(90px) scale(0.7);
+  z-index: 1; }
+
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 4; }
+
+.parallax__layer--back {
+  -webkit-transform: translateZ(-30px) scale(1.1);
+  transform: translateZ(-30px) scale(1.1);
+  z-index: 3; }
+
+.parallax__layer--deep {
+  -webkit-transform: translateZ(-600px) scale(3);
+  transform: translateZ(-600px) scale(3);
+  z-index: 2; }
+
 /* --------------------------------
 
 Main Components
@@ -556,6 +602,8 @@ header {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  background: url("../../img/header-bkgd@2x.png") repeat-x;
+  background-size: 1440px 449px;
   padding: 50px 0; }
   header::after {
     clear: both;
@@ -563,7 +611,8 @@ header {
     display: block; }
   @media only screen and (min-width: 768px) {
     header {
-      padding: 100px 0; } }
+      padding: 100px 0;
+      z-index: 1; } }
   header .card {
     float: left;
     display: block;
@@ -582,7 +631,8 @@ header {
         display: block;
         margin-right: 2.3576515979%;
         width: 65.8807828007%;
-        margin-left: 17.0596085997%;
+        margin-left: 34.1192171993%;
+        position: relative;
         padding: 60px 90px; }
         header .card:last-child {
           margin-right: 0; } }
@@ -608,7 +658,28 @@ header {
         header .card .line {
           margin-bottom: 3rem; } }
     header .card p {
-      max-width: 450px; }
+      max-width: 500px; }
+  header .paul-hershey {
+    display: none; }
+    @media only screen and (min-width: 768px) {
+      header .paul-hershey {
+        float: left;
+        display: block;
+        margin-right: 2.3576515979%;
+        width: 14.7019570017%;
+        margin-left: 8.5298042998%;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+        position: absolute;
+        top: 200px;
+        left: -100px;
+        display: block;
+        z-index: 2;
+        width: 540px;
+        height: 540px;
+        background: url("../../img/paul-hershey@2x.png");
+        background-size: 540px 540px; }
+        header .paul-hershey:last-child {
+          margin-right: 0; } }
 
 .process {
   padding: 50px 0;
