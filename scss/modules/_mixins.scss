@@ -35,3 +35,31 @@
   content: "";
   background-color: $homer;
 }
+
+
+// Button Style
+@mixin button {
+  padding: 15px 30px;
+  border-radius: 2px;
+  color: $snow;
+  background-color: $doughnut;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1);
+  transition: all 200ms ease-in;
+  transform: scale(1);
+  &:hover {
+    box-shadow: 0px 0px 8px 0 rgba(246,80,151,0.75);
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
+  }
+}

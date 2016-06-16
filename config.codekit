@@ -49,6 +49,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/css\/button-efeects.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/button-efeects.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/css\/main.css": {
 		"fileType": 16,
 		"ignore": 1,
@@ -175,13 +184,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/paul-hershey.png": {
+	"\/img\/paul-hershey@2x.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 425959,
-		"inputAbbreviatedPath": "\/img\/paul-hershey.png",
-		"outputAbbreviatedPath": "\/img\/paul-hershey.png",
+		"initialSize": 377248,
+		"inputAbbreviatedPath": "\/img\/paul-hershey@2x.png",
+		"outputAbbreviatedPath": "\/img\/paul-hershey@2x.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
