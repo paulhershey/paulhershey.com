@@ -55,20 +55,21 @@
         }
       }
       button {
-        position: absolute;
-        top: 440px;
-        right: 80px;
+        position: relative;
+        top: 60px;
         width: 150px;
         height: 60px;
+        margin: 0 auto;
         background: $doughnut;
         color: $snow;
         font-family: $primary-font;
         font-size: 1.7rem;
         box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
+        border:none;
         @include MQ(M) {
+          position: absolute;
           top: 470px;
           right: 40px;
-          width: 150px;
         }
       }
     }

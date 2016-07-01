@@ -36,12 +36,14 @@ header {
     background: $snow;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
     padding: 20px 30px;
+    margin-top: 30px;
     text-align: left;
     @include MQ(M) {
       @include span-columns(8);
       @include shift(4);
       position: relative;
       padding: 60px 90px;
+      margin-top: 0px;
     }
     svg {
       margin-bottom: 10px;
