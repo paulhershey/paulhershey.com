@@ -4,7 +4,7 @@ header {
   background-size: 1440px 449px;
   padding: 30px 0 40px;
   @include MQ(M) {
-    padding: 100px 0 150px;
+    padding: 80px 0 150px;
     position: relative;
   }
   nav {
@@ -77,13 +77,24 @@ header {
       @include shift(1);
       box-shadow: 0 2px 4px 0 rgba(0,0,0,0.30);
       position: absolute;
-      top: 220px;
+      top: 200px;
       left: -100px;
       display: block;
       width: 540px;
       height: 540px;
       background: url("../../img/paul-hershey@2x.png");
       background-size: 540px 540px;
+    }
+  }
+  .down-arrow {
+    display: none;
+    @include MQ(M) {
+      @include span-columns(1);
+      @include shift(7);
+      display: block;
+      position: absolute;
+      top: 580px;
+      z-index: 4;
     }
   }
 }

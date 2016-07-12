@@ -61,42 +61,32 @@ main {
     @include MQ(M) {
       height: 800px;
     }
-    .button-left {
-      position: absolute;
-      top: 370px;
-      right: 113px;
-      width: 150px;
-      height: 60px;
-      z-index: 3;
-      background: $doughnut;
-      color: $snow;
-      font-family: $primary-font;
-      font-size: 1.7rem;
-      box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
-      @include MQ(M) {
-        top: 270px;
-        left: 320px;
-        width: 150px;
-      }
-    }
-    .button-right {
-      position: absolute;
-      top: 370px;
-      right: 113px;
-      width: 150px;
-      height: 60px;
-      z-index: 3;
-      background: $doughnut;
-      color: $snow;
-      font-family: $primary-font;
-      font-size: 1.7rem;
-      box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
-      @include MQ(M) {
-        top: 270px;
-        right: 320px;
-        width: 150px;
-      }
-    }
+		.view {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			bottom: 120px;
+	    .button-left {
+				margin: 0 auto;
+				text-align: center;
+	      width: 150px;
+	      z-index: 3;
+	      @include MQ(M) {
+	        bottom: 305px;
+	        left: -200px;
+	      }
+	    }
+			.button-right {
+				margin: 0 auto;
+				text-align: center;
+	      width: 150px;
+	      z-index: 3;
+	      @include MQ(M) {
+	        bottom: 310px;
+	        left: 205px;
+	      }
+	    }
+		}
     .photo-bisk {
       @include span-columns(10);
       @include shift(1);
@@ -206,6 +196,7 @@ main {
       @include span-columns(10);
       @include shift(1);
       background: #FFFFFF;
+			min-height: 300px;
       box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
       padding: 30px;
       text-align: left;
@@ -218,6 +209,7 @@ main {
         @include shift(2);
         margin-bottom: 10rem;
         padding: 50px;
+				min-height: 345px;
         top: 0;
       }
       .line {
@@ -233,6 +225,7 @@ main {
       @include span-columns(10);
       @include shift(1);
       background: #FFFFFF;
+			min-height: 300px;
       box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.30);
       padding: 30px;
       text-align: left;
@@ -245,6 +238,7 @@ main {
         @include shift(6);
         margin-bottom: 10rem;
         padding: 50px;
+				min-height: 345px;
         top: 0;
       }
       .line {

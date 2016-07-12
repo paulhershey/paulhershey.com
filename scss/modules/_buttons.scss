@@ -1,0 +1,88 @@
+.button {
+  position: relative;
+  padding: 1em 0;
+  text-align: center;
+  border: solid 1px $doughnut;
+  color: $doughnut;
+  min-width: 200px;
+  max-width: 400px;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  &.raised {
+    @include transition(0.1s all);
+    background: $doughnut;
+    color: $snow;
+    box-shadow: 0px 1px 1px darken($doughnut,15%);
+    &:active {
+      background: darken($doughnut,2.5%);
+      box-shadow: 0px 1px 1px darken($doughnut,25%);
+    }
+  }
+}
+
+.anim {
+  @include transform(translateY(-50%) translateX(-50%));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  &:before {
+    position: relative;
+    content: '';
+    display: block;
+    margin-top: 100%;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+  }
+}
+
+.hoverable:hover > .anim {
+  @include animation(anim-out 0.75s);
+  &:after { @include animation(anim-out-pseudo 0.75s); }
+}
+
+// Keyframes mixin
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+@include keyframes(anim-in) {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@include keyframes(anim-in-pseudo) {
+  0% { background: rgba(192, 38, 118, 0.25); }
+  100% { background: rgba(192, 38, 118, 0); }
+}
+
+@include keyframes(anim-out) {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@include keyframes(anim-out-pseudo) {
+  0% { background: rgba(192, 38, 118, 0.25); }
+  100% { background: rgba(192, 38, 118, 0); }
+}

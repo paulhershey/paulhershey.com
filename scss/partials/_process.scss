@@ -111,9 +111,6 @@
           @include MQ(M) {
             display: block;
           }
-          a {
-            @include button;
-          }
           .quote {
             margin-bottom: 10px;
           }
