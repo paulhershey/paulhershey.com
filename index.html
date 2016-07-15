@@ -80,7 +80,6 @@
 		ga('send', 'pageview');
 	</script>
 
-	<!-- Google Analytics: Event Tracking -->
 	<script type="text/javascript">
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-32569859-1']);
@@ -158,15 +157,16 @@
 			</div>
 			<div class="paul-hershey parallax__layer--back"></div>
 				<div class="down-arrow">
-					<!-- <a href="#two"> -->
-					<svg width="54" height="54" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
+					<a href="#two">
+						<img src="img/down.svg" alt="Down Arrow" height="54" width="54">
+					<!-- <svg width="54" height="54" viewBox="0 0 108 108" xmlns="http://www.w3.org/2000/svg">
 						<title>Group</title>
 						<g fill="none" fill-rule="evenodd">
 							<circle fill="#00A1DF" cx="54" cy="54" r="54"/>
 							<path stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M34 49l20 23 20-23"/>
 						</g>
-					</svg>
-					<!-- </a> -->
+					</svg> -->
+					</a>
 				</div>
 		</header>
 		<hr>
@@ -174,7 +174,7 @@
 
 		<!-- Process Content -->
 		<section class="process">
-			<h2>MY APPROACH TO DESIGN THINKING</h2>
+			<h2 id="two">MY APPROACH TO DESIGN THINKING</h2>
 			<div class="gallery js-flickity parallax__layer--fore" data-flickity-options='{ "setGallerySize": false, "prevNextButtons": true }'>
 				<div class="gallery-cell">
 					<div class="steps">
@@ -533,6 +533,23 @@
 
 	<script src="js/jquery-2.1.1.js"></script>
 	<script src="https://npmcdn.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
+	<!-- Scroll Animation -->
+	<script type="text/javascript">
+		jQuery(function() {
+			$('a[href*="#"]:not([href="#"])').click(function() {
+				if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
+					var target = $(this.hash);
+					target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+					if (target.length) {
+						$('html, body').animate({
+							scrollTop: target.offset().top
+						}, 1000);
+						return false;
+					}
+				}
+			});
+		});
+	</script>
 	<script src="js/main.js"></script>
 
 </body>
