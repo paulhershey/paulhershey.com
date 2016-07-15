@@ -246,6 +246,11 @@ a {
   transform: translateZ(90px) scale(0.7);
   z-index: 1; }
 
+.parallax__layer--station {
+  -webkit-transform: translateZ(40px) scale(0.9);
+  transform: translateZ(40px) scale(0.9);
+  z-index: 1; }
+
 .parallax__layer--base {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
