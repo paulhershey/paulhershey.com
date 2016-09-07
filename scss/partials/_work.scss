@@ -50,6 +50,7 @@ main {
   }
   h2 {
     margin-bottom: 4rem;
+		text-transform: uppercase;
     @include MQ(M) {
       font-size: 3rem;
       margin-bottom: 10rem;
@@ -204,6 +205,7 @@ main {
       top: 150px;
       margin-bottom: 8rem;
       z-index: 2;
+			h3 {text-transform: uppercase;}
       @include MQ(M) {
         @include span-columns(4);
         @include shift(2);
@@ -233,6 +235,7 @@ main {
       top: 150px;
       margin-bottom: 8rem;
       z-index: 2;
+			h3 {text-transform: uppercase;}
       @include MQ(M) {
         @include span-columns(4);
         @include shift(6);

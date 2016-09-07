@@ -133,6 +133,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/img\/elements-of-web-design_banner.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4.03466e+06,
+		"inputAbbreviatedPath": "\/img\/elements-of-web-design_banner.jpg",
+		"outputAbbreviatedPath": "\/img\/elements-of-web-design_banner.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/img\/gro-iso.png": {
 		"fileType": 32768,
 		"ignore": 0,

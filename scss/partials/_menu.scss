@@ -221,23 +221,28 @@ main {
 	.contact-info {
 		margin-top: 80px;
 
+		a {
+			font-family: $primary-font;
+			color: rgba($snow, 1);
+			display: inline-block;
+
+			&.selected {
+				color: $snow;
+			}
+
+			.no-touch &:hover {
+				color: $snow;
+			}
+		}
+
 		li {
-			font-family: $secondary-font;
 			margin-bottom: 1.5em;
 			line-height: 1.2;
 			color: $snow;
 		}
 
-		a {
-			color: $snow;
-		}
-
 		span {
 			display: block;
-		}
-
-		li, a, span {
-			font-size: 1.6rem;
 		}
 
 	}
@@ -275,7 +280,6 @@ main {
 		}
 
 		.contact-info {
-			margin-top: 120px;
 			text-align: right;
 
 			li {
@@ -283,7 +287,7 @@ main {
 			}
 
 			li, a, span {
-				font-size: 2rem;
+				font-size: 1.6rem;
 			}
 		}
 	}

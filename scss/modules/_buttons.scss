@@ -1,3 +1,22 @@
+.button-white {
+  position: relative;
+  padding: 1em 0;
+  text-align: center;
+  border: solid 1px $snow;
+  color: $snow;
+  max-width: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  @include MQ(M) {
+    float: right;
+    padding: 1em;
+    max-width: 300px;
+  }
+}
+
 .button {
   position: relative;
   padding: 1em 0;
