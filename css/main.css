@@ -860,7 +860,7 @@ header {
         display: block;
         width: 540px;
         height: 540px;
-        background: url("../../img/paul-hershey@2x.png");
+        background: url("../img/paul-hershey@2x.png");
         background-size: 540px 540px; }
         header .paul-hershey:last-child {
           margin-right: 0; } }
